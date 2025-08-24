@@ -66,7 +66,7 @@ export default function UploadPage() {
       >
         <div className="max-w-6xl mx-auto px-2 py-4 flex items-center justify-between">
           {/* Logo */}
-          <h1 className="text-white font-bold text-xl px-4">M-TO-K</h1>
+          <h1 className="text-white font-bold text-xl px-4">M-K</h1>
 
           {/* Links */}
           <div className="space-x-6">
