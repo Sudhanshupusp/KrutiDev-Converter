@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 export default function UploadPage() {
   const [file, setFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
@@ -23,10 +25,13 @@ export default function UploadPage() {
     setDownloadUrl(null);
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/convert`, {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/convert`,
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (!response.ok) throw new Error("Upload failed");
 
@@ -61,25 +66,21 @@ export default function UploadPage() {
       {/* Navbar */}
       <nav
         className="fixed top-6 left-1/2 transform -translate-x-1/2 
-     bg-white/5 backdrop-blur-xs border border-white/5 
-     rounded-full px-4 py-3 md:px-20 shadow-lg z-10 flex space-x-6 m-0"
+  bg-white/5 backdrop-blur-xs border border-white/5 
+  rounded-full px-6 py-3 md:px-12 shadow-lg z-10 
+  flex items-center justify-between w-auto space-x-8"
       >
-        <div className="max-w-6xl mx-auto px-2 py-4 flex items-center justify-between">
-          {/* Logo */}
-          <h1 className="text-white font-bold text-xl px-4">M-K</h1>
-
-          {/* Links */}
-          <div className="space-x-6">
-            <a href="#" className="text-white hover:text-yellow-300">
-              Home
-            </a>
-            <a href="#" className="text-white hover:text-yellow-300">
-              About
-            </a>
-            <a href="#" className="text-white hover:text-yellow-300">
-              Contact
-            </a>
-          </div>
+        {/* Links Section */}
+        <div className="flex items-center space-x-6">
+          <a href="#" className="text-white hover:text-yellow-300">
+            Home
+          </a>
+          <a href="#" className="text-white hover:text-yellow-300">
+            About
+          </a>
+          <a href="#" className="text-white hover:text-yellow-300">
+            Contact
+          </a>
         </div>
       </nav>
 
@@ -123,7 +124,6 @@ export default function UploadPage() {
             </a>
           )}
         </div>
-        
       </div>
     </div>
   );
