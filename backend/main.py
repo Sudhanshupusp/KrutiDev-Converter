@@ -25,6 +25,10 @@ CONVERTED_DIR = "converted"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 os.makedirs(CONVERTED_DIR, exist_ok=True)
 
+@app.get("/")
+def read_root():
+    return {"status": "ok", "message": "FastAPI backend is running!"}
+
 
 @app.post("/convert")
 async def convert_file(file: UploadFile = File(...)):
