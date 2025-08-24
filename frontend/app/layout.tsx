@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
  title: "Mangal → Kruti Dev Converter",
   description: "Convert Mangal Unicode documents to Kruti Dev instantly.",
+   icons: {
+    icon: "/favicon.ico",   // 👈 Your logo in tab
+  },
 };
 
 export default function RootLayout({
