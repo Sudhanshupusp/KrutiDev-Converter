@@ -57,7 +57,7 @@ export default function Converter() {
 
         try {
             // Hardcoded API URL for local development
-            const apiUrl = "https://krutidev-converter.onrender.com";
+            const apiUrl = "https://krutidev-converter.onrender.com/convert";
             console.log('Calling API:', apiUrl);
 
             const response = await fetch(apiUrl, {
