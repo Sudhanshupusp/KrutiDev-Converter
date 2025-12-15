@@ -1,26 +1,98 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary */
+  --saffron: #FF6B35;
+  --saffron-light: #FF8F66;
+  --saffron-dark: #E54E1B;
+
+  /* Neutrals */
+  --ink-black: #0D0D0D;
+  --charcoal: #1A1A1A;
+  --graphite: #2D2D2D;
+  --silver: #8A8A8A;
+  --pearl: #F5F5F5;
+  --white: #FAFAFA;
+
+  /* Accents */
+  --gold: #C9A227;
+  --teal: #008080;
+
+  /* Gradients */
+  --hero-gradient: linear-gradient(135deg, var(--ink-black) 0%, var(--charcoal) 50%, var(--graphite) 100%);
+  --accent-gradient: linear-gradient(90deg, var(--saffron) 0%, var(--gold) 100%);
+
+  --background: var(--ink-black);
+  --foreground: var(--white);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-saffron: var(--saffron);
+  --color-saffron-light: var(--saffron-light);
+  --color-saffron-dark: var(--saffron-dark);
+  --color-ink-black: var(--ink-black);
+  --color-charcoal: var(--charcoal);
+  --color-graphite: var(--graphite);
+  --color-silver: var(--silver);
+  --color-pearl: var(--pearl);
+  --color-gold: var(--gold);
+  --color-teal: var(--teal);
+
+  --font-display: var(--font-playfair);
+  --font-sans: var(--font-dm-sans);
+  --font-hindi: var(--font-tiro);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  cursor: auto;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ink-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--charcoal);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--saffron);
+}
+
+/* Selection */
+::selection {
+  background: var(--saffron);
+  color: white;
 }

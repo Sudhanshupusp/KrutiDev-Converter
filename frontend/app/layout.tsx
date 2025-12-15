@@ -1,23 +1,30 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Playfair_Display, DM_Sans, Tiro_Devanagari_Hindi } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "../components/ui/SmoothScroll";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const tiroHindi = Tiro_Devanagari_Hindi({
+  weight: "400",
+  variable: "--font-tiro",
+  subsets: ["devanagari"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
- title: "Mangal → Kruti Dev Converter",
-  description: "Convert Mangal Unicode documents to Kruti Dev instantly.",
-   icons: {
-    icon: "/favicon.ico",   // 👈 Your logo in tab
-  },
+  title: "Mangal to Kruti Dev Converter | Premium Hindi Font Tool",
+  description: "Transform Mangal (Unicode) to Kruti Dev seamlessly with our advanced converter. Elegant, fast, and secure.",
 };
 
 export default function RootLayout({
@@ -26,10 +33,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" className={`${playfair.variable} ${dmSans.variable} ${tiroHindi.variable}`}>
+      <body className="antialiased">
+        <SmoothScroll />
         {children}
       </body>
     </html>

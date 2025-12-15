@@ -9,9 +9,11 @@ from lib.unicode2krutidev import Unicode_to_KrutiDev
 
 app = FastAPI()
 
+origins = ["https://kruti-dev-converter.vercel.app",]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://kruti-dev-converter.vercel.app/"],  # your frontend URL
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
